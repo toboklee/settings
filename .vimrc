@@ -62,6 +62,7 @@ hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none g
 " Show number
 set number
 
+
 " Tab
 " =====================================================================================
 " size of a hard tabstop
@@ -82,6 +83,8 @@ let mapleader = ','
 colorscheme gruvbox
 
 set autoread
+
+set laststatus=2
 
 set wildignore=*.swp,*.bak,*.pyc,**tags**
 
@@ -152,3 +155,10 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" Key Macro
+map <Leader>p :call InsertLine()<CR>
+
+function! InsertLine()
+  let trace = expand("import pdb; pdb.set_trace()")
+  execute "normal o".trace
+endfunction
