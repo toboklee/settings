@@ -22,6 +22,6 @@ else
 
     git add .
     read -r -p 'Commit Message: ' message
-    git commit -m '$message'
+    git commit -m "$message"
     git push
 fi
