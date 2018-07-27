@@ -62,9 +62,6 @@ hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none g
 " Show number
 set number
 
-" Fugitive statusline
-set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
-
 " Tab
 " =====================================================================================
 " size of a hard tabstop
@@ -100,6 +97,9 @@ let g:jedi#use_tabs_not_buffers = 1
 " Highlight tabs and trailing spaces
 set listchars=tab:»·,trail:·
 set list
+
+" Fugitive statusline
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command-T
