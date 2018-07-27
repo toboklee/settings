@@ -62,6 +62,8 @@ hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none g
 " Show number
 set number
 
+" Fugitive statusline
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 
 " Tab
 " =====================================================================================
