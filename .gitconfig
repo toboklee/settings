@@ -1,0 +1,27 @@
+[user]
+	name = Justin Lee
+	email = tlee@gadventures.com
+
+
+[alias]
+    # log me
+    lm = log --author=toboklee
+
+    # log oneline all
+    loa = log --oneline --decorate
+
+    # log oneline (last 10 commits)
+    lo = log --oneline --decorate -n 10
+
+    # log graph
+    lg = log --graph --decorate --oneline --abbrev-commit
+
+    # show recently worked on branches
+    recent = for-each-ref --sort=-committerdate refs/heads/ --format="%(refname:short)" --count=10
+    recently = for-each-ref --sort=-committerdate refs/heads/ --format="%(refname:short)" --count=20
+
+    d = diff
+    s = status
+[core]
+	editor = /usr/bin/vim
+	excludesfile = /Users/tlee/.gitignore_global
