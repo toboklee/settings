@@ -85,9 +85,13 @@ set autoread
 
 set laststatus=2
 
-set wildignore=*.swp,*.bak,*.pyc,**tags**
+set wildignore=*.swp,*.bak,*.pyc
+set wildignore+=tags,media-server
 
 set backspace=indent,eol,start " backspace over everything in insert mode
+
+set ignorecase
+set smartcase
 
 let g:ack_autoclose=1
 
@@ -98,13 +102,12 @@ let g:jedi#use_tabs_not_buffers = 1
 set listchars=tab:»·,trail:·
 set list
 
-" Fugitive statusline
-set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command-T
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:CommandTCancelMap='<Bslash>'
+let g:CommandTTraverseSCM='pwd'
 let g:CommandTMaxFiles=400000
 " autocmd VimEnter :CommandTLoad<CR>
 
@@ -164,3 +167,8 @@ function! InsertLine()
   let trace = expand("import pdb; pdb.set_trace()")
   execute "normal o".trace
 endfunction
+
+" Statusline
+set statusline=%F
+:set statusline+=\ -\      " Separator
+set statusline+=%{FugitiveStatusline()} 
